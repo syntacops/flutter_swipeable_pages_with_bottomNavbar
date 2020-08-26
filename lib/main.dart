@@ -25,7 +25,29 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _currentIndex = 0;
+
+  final _bottomNavigationBarItems = [
+    BottomNavigationBarItem(
+        icon: Icon(Icons.star, color: Colors.blue),
+        title: Text('Blue', style: TextStyle(color: Colors.blue))),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.star, color: Colors.green),
+        title: Text('Green', style: TextStyle(color: Colors.green))),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.star, color: Colors.pink),
+        title: Text('Pink', style: TextStyle(color: Colors.pink))),
+    BottomNavigationBarItem(
+        icon: Icon(Icons.star, color: Colors.red),
+        title: Text('Red', style: TextStyle(color: Colors.red))),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,6 +68,16 @@ class MyHomePage extends StatelessWidget {
           PinkScreen(),
           RedScreen(),
         ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        items: _bottomNavigationBarItems,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        //type: BottomNavigationBarType.fixed,
       ),
     );
   }
