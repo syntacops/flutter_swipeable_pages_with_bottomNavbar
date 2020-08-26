@@ -8,11 +8,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+// #region
       title: 'Flutter Swipeable Pages with BottomNavBar',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.grey,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+// #endregion
       home: MyHomePage(),
     );
   }
@@ -21,6 +24,18 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+// #region
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        centerTitle: true,
+        title: Text(
+          'Swipeable Pages with BottomNavigationBar',
+          style: TextStyle(fontSize: 18),
+        ),
+      ),
+// #endregion
+      body: Center(child: Text('Empty Body')),
+    );
   }
 }
