@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_swipeable_pages_with_bottomNavbar/screens/blue_screens.dart';
+import 'package:flutter_swipeable_pages_with_bottomNavbar/screens/green_screen.dart';
+import 'package:flutter_swipeable_pages_with_bottomNavbar/screens/pink_screen.dart';
+import 'package:flutter_swipeable_pages_with_bottomNavbar/screens/red_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -35,7 +39,14 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
 // #endregion
-      body: Center(child: Text('Empty Body')),
+      body: PageView(
+        children: [
+          BlueScreen(),
+          GreenScreen(),
+          PinkScreen(),
+          RedScreen(),
+        ],
+      ),
     );
   }
 }
