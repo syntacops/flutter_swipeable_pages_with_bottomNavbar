@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-// #region
+// #region MaterialApp() attributes
       title: 'Flutter Swipeable Pages with BottomNavBar',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -25,7 +25,7 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-// #region
+// #region AppBar()
       appBar: AppBar(
         backgroundColor: Colors.white,
         centerTitle: true,
